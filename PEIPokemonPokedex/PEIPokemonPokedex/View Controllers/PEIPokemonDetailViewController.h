@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PEIPokemonDetailViewController.h
 //  PEIPokemonPokedex
 //
 //  Created by Austin Potts on 3/27/20.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface PEIPokemonDetailViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
