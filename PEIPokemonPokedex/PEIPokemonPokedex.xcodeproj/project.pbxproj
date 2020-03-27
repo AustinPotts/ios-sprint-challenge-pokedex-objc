@@ -15,6 +15,7 @@
 		45DAD484242E4D8D00A646DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAD483242E4D8D00A646DE /* main.m */; };
 		45DAD48F242E4F8000A646DE /* PEIPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAD48E242E4F8000A646DE /* PEIPokemonDetailViewController.m */; };
 		45DAD492242E4F9B00A646DE /* PEIPokemonListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAD491242E4F9B00A646DE /* PEIPokemonListTableViewController.m */; };
+		45DAD495242E512100A646DE /* PEIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAD494242E512100A646DE /* PEIPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		45DAD48E242E4F8000A646DE /* PEIPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PEIPokemonDetailViewController.m; sourceTree = "<group>"; };
 		45DAD490242E4F9B00A646DE /* PEIPokemonListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PEIPokemonListTableViewController.h; sourceTree = "<group>"; };
 		45DAD491242E4F9B00A646DE /* PEIPokemonListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PEIPokemonListTableViewController.m; sourceTree = "<group>"; };
+		45DAD493242E512100A646DE /* PEIPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PEIPokemon.h; sourceTree = "<group>"; };
+		45DAD494242E512100A646DE /* PEIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PEIPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 		45DAD48B242E4DBD00A646DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				45DAD493242E512100A646DE /* PEIPokemon.h */,
+				45DAD494242E512100A646DE /* PEIPokemon.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				45DAD492242E4F9B00A646DE /* PEIPokemonListTableViewController.m in Sources */,
 				45DAD473242E4D8A00A646DE /* AppDelegate.m in Sources */,
 				45DAD484242E4D8D00A646DE /* main.m in Sources */,
+				45DAD495242E512100A646DE /* PEIPokemon.m in Sources */,
 				45DAD476242E4D8A00A646DE /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
