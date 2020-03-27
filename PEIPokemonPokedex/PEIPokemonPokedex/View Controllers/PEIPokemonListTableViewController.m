@@ -7,44 +7,63 @@
 //
 
 #import "PEIPokemonListTableViewController.h"
+#import "PEIPokemonDetailViewController.h"
+#import "PEIPokemon.h"
+#import <PEIPokemonPokedex-Swift.h>
+
 
 @interface PEIPokemonListTableViewController ()
+
+@property (nonatomic) NSMutableArray *pokemonArray;
+
+@property APIController *pokemonController;
 
 @end
 
 @implementation PEIPokemonListTableViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _pokemonController = [[APIController alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.tableFooterView = [UIView new];
+    [self.pokemonController fetchAllPokemonWithCompletion:^(NSArray<PEIPokemon *> * _Nullable array, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"%lu", array.count);
+            [self.tableView  reloadData];
+        });
+    }];
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//
+//    return self.pokemonController.allPokemon.count;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return self.pokemonController.allPokemon.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+     PEIPokemon *pokemon = self.pokemonController.allPokemon[indexPath.row];
+     cell.textLabel.text = pokemon.name.capitalizedString;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -80,14 +99,19 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ShowPokemonSegue"]) {
+        PEIPokemonDetailViewController *detailVC = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PEIPokemon *pokemon = self.pokemonController.allPokemon[indexPath.row];
+        detailVC.pokemon = pokemon;
+        [self.pokemonController fillInDetailsFor:pokemon];
+    }
 }
-*/
+
 
 @end

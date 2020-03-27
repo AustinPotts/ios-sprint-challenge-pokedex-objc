@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class PEIPokemon;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PEIPokemonDetailViewController : UIViewController
+
+@property PEIPokemon *pokemon;
 
 @end
 

@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
+@class APIController;
+@class PEIPokemon;
+
 NS_ASSUME_NONNULL_BEGIN
+
 
 @interface PEIPokemonListTableViewController : UITableViewController
 

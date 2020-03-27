@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="1uj-fo-lj0" kind="show" identifier="ShowPokemonSegue" trigger="accessoryAction" id="WFZ-8f-UUK"/>
+                                    <segue destination="1uj-fo-lj0" kind="show" identifier="ShowPokemonSegue" id="AAV-HM-z0U"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -64,7 +64,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="CrZ-iD-i3a">
-                                <rect key="frame" x="20" y="504" width="374" height="238"/>
+                                <rect key="frame" x="20" y="504" width="374" height="214"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9I-k9-Ii2">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="48"/>
@@ -79,8 +79,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLa-qD-kGM">
-                                        <rect key="frame" x="0.0" y="190" width="347" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                        <rect key="frame" x="0.0" y="190" width="176.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>

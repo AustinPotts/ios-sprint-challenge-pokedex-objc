@@ -35,29 +35,35 @@ class APIController: NSObject {
     @objc var allPokemon: [PEIPokemon] = []
     @objc var abilities: [String] = []
     
-    
+    // Create shared singleton
     @objc(sharedController) static let shared = APIController()
     
     // MARK: - Fetch
     @objc
     func fetchAllPokemon(completion: @escaping ([PEIPokemon]?, Error?) -> Void) {
+        
+        // Create request
         var request = URLRequest(url: allPokemonBaseURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
+        // open url session with request
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             
+            // error handle
             if let error = error {
                 NSLog("Error fetching pokemon: \(error)")
                 completion(nil, error)
                 return
             }
             
+            // get data
             guard let data = data else {
                 NSLog("No data returned from dataTask")
                 completion(nil, error)
                 return
             }
             
+            // decode data 
             do {
                 if let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     if let results = jsonDict["results"] as? [[String: String]] {
